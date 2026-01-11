@@ -28,8 +28,8 @@ module TOP(
         .pc_out(pc_plus2)
     );
 
-    // ===================== Instruction Decode =====================
-    wire [15:0] instruction;          // locally reconstructed
+    // ===================== Instruction =====================
+    wire [15:0] instruction;
     wire [3:0]  opcode;
     wire [2:0]  rd_raw, funct3;
 
@@ -38,9 +38,6 @@ module TOP(
     wire [11:0] addr12;
     wire [5:0]  imm6;
 
-    // NOTE:
-    // Ins_Mem (the one you uploaded earlier) does NOT have output "instruction"
-    // so we only connect the fields it actually provides.
     Ins_Mem IM0(
         .address(pc),
 
@@ -54,24 +51,10 @@ module TOP(
         .rt_rtype(rt_rtype),
 
         .addr12(addr12),
-        .imm6(imm6)
-    );
+        .imm6(imm6),
 
-    // Reconstruct a 16-bit instruction bus for modules that still expect it
-    // Based on opcode (format: R/I/J)
-    //
-    // R-type: op | rs | rt | rd | funct
-    // I-type: op | rs | rt | imm6
-    // J-type: op | addr12
-    //
-    // If your Ins_Mem was fixed to match the spec, rs_rtype/rt_rtype/rd_raw are correct.
-    assign instruction =
-        (opcode == 4'b0011) ? {opcode, addr12} : // OP_JUMP (adjust if your opcode differs)
-        // For all non-JUMP: assume I-type vs R-type by opcode group
-        // R-type group in your design: 0000(ALU0),0001(ALU1),0010(SHIFT/ALU2),1010(MFSR),1011(MTSR)
-        ((opcode==4'b0000)||(opcode==4'b0001)||(opcode==4'b0010)||(opcode==4'b1010)||(opcode==4'b1011))
-            ? {opcode, rs_rtype, rt_rtype, rd_raw, funct3}
-            : {opcode, rs_i, rt_i, imm6};
+        .instruction(instruction)
+    );
 
     // ===================== Control signals =====================
     wire reg_write, alu_src, reg_dst;
@@ -240,7 +223,6 @@ module TOP(
                      (branch_taken) ? pc_branch_target :
                                       pc_plus2;
 
-    // Note: interrupt_pending and mux_clk are currently unused in your RTL
-    // (safe to ignore unless your assignment requires interrupts/clock mux)
+    // interrupt_pending, mux_clk currently unused (OK)
 
 endmodule

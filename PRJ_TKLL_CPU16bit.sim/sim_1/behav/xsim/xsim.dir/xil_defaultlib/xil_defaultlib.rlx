@@ -14,7 +14,7 @@ D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/ALU.v,1768077379,veril
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/ALU_control.v,1768066466,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/C_U.v,,ALU_control,,,,,,,,
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/C_U.v,1768066466,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Imm_gen.v,,C_U,,,,,,,,
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Imm_gen.v,1768066466,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Ins_Mem.v,,Imm_gen,,,,,,,,
-D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Ins_Mem.v,1768105819,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Jump.v,,Ins_Mem,,,,,,,,
+D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Ins_Mem.v,1768108729,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Jump.v,,Ins_Mem,,,,,,,,
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Jump.v,1768066466,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/TOP.v,,Jump,,,,,,,,
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/TOP.v,1768105820,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/add_pc.v,,TOP,,,,,,,,
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/add_pc.v,1768066466,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/data_mem.v,,add_pc,,,,,,,,
