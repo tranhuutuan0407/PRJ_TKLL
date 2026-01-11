@@ -104,19 +104,23 @@ module ALU(
             SEL_MULT: begin
                 hi_out = mult_s[31:16];
                 lo_out = mult_s[15:0];
+                ALU_out = mult_s[15:0]; // deterministic main output
             end
             SEL_MULTU: begin
                 hi_out = mult_u[31:16];
                 lo_out = mult_u[15:0];
+                ALU_out = mult_u[15:0]; // deterministic main output
             end
             SEL_DIV: begin
                 // LO = quotient, HI = remainder (MIPS-like)
                 lo_out = div_q_s;
                 hi_out = div_r_s;
+                ALU_out = div_q_s; // deterministic main output
             end
             SEL_DIVU: begin
                 lo_out = div_q_u;
                 hi_out = div_r_u;
+                ALU_out = div_q_u; // deterministic main output
             end
             // ================= Branch compares (cmp output) =================
             SEL_CMP_NEQ: begin
@@ -128,7 +132,7 @@ module ALU(
             // ================= LH/SH address per spec =================
             // start = (rs[15:1] + imm) << 1
             SEL_ADDR_LHSH: begin
-                ALU_out = ( {1'b0, A[15:1]} + B ) << 1;
+                ALU_out = ( {A[15], A[15:1]} + B ) << 1; // keep MSB; (A>>1) with sign bit preserved
             end
             default: begin
                 // keep defaults
