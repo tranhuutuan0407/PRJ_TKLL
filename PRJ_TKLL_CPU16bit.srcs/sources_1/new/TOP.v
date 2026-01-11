@@ -10,7 +10,9 @@ module TOP(
 
     localparam [15:0] CONST2 = 16'd2;
 
-    // ===================== PC =====================
+    // =========================================================
+    // PC
+    // =========================================================
     wire [15:0] pc, next_pc, pc_plus2;
     wire        hold_hlt;
 
@@ -28,46 +30,50 @@ module TOP(
         .pc_out(pc_plus2)
     );
 
-    // ===================== Instruction =====================
-    wire [15:0] instruction;
+    // =========================================================
+    // Instruction Memory (RAW + FIELDS)
+    // =========================================================
+    wire [15:0] instruction;   // raw 16-bit from ROM
     wire [3:0]  opcode;
-    wire [2:0]  rd_raw, funct3;
+    wire [2:0]  funct3;
 
-    wire [2:0] rs_i, rt_i;
-    wire [2:0] rs_rtype, rt_rtype;
+    wire [2:0]  rs_rtype, rt_rtype, rd_raw;
+    wire [2:0]  rs_i, rt_i;
     wire [11:0] addr12;
     wire [5:0]  imm6;
 
     Ins_Mem IM0(
         .address(pc),
+        .instr_raw(instruction),
 
         .opcode(opcode),
-        .rd_raw(rd_raw),
         .funct3(funct3),
+
+        .rs_rtype(rs_rtype),
+        .rt_rtype(rt_rtype),
+        .rd(rd_raw),
 
         .rs_i(rs_i),
         .rt_i(rt_i),
-        .rs_rtype(rs_rtype),
-        .rt_rtype(rt_rtype),
 
-        .addr12(addr12),
         .imm6(imm6),
-
-        .instruction(instruction)
+        .addr12(addr12)
     );
 
-    // ===================== Control signals =====================
-    wire reg_write, alu_src, reg_dst;
-    wire mem_read, mem_write;
-    wire branch_en, jump_en;
-    wire [1:0] wb_sel;
-    wire [2:0] immtype;
-    wire [3:0] alu_main;
-    wire branch_type, jr_en;
+    // =========================================================
+    // Control Unit
+    // =========================================================
+    wire        reg_write, alu_src, reg_dst;
+    wire        mem_read, mem_write;
+    wire        branch_en, jump_en;
+    wire [1:0]  wb_sel;
+    wire [2:0]  immtype;
+    wire [3:0]  alu_main;
+    wire        branch_type, jr_en;
 
-    wire [2:0] mfsr_sel;
-    wire mtra, mtat, mthi, mtlo;
-    wire hi_lo_from_alu;
+    wire [2:0]  mfsr_sel;
+    wire        mtra, mtat, mthi, mtlo;
+    wire        hi_lo_from_alu;
 
     C_U CU0(
         .opcode(opcode),
@@ -89,20 +95,31 @@ module TOP(
         .jr_en(jr_en),
 
         .mfsr_sel(mfsr_sel),
-        .mtra(mtra), .mtat(mtat), .mthi(mthi), .mtlo(mtlo),
+        .mtra(mtra),
+        .mtat(mtat),
+        .mthi(mthi),
+        .mtlo(mtlo),
         .hi_lo_from_alu(hi_lo_from_alu)
     );
 
-    // ===================== Register File =====================
+    // =========================================================
+    // Register File select (minimal muxing in TOP)
+    // =========================================================
+    localparam [3:0] OP_ALU0 = 4'b0000;
+    localparam [3:0] OP_ALU1 = 4'b0001;
+    localparam [3:0] OP_ALU2 = 4'b0010;
+    localparam [3:0] OP_MFSR = 4'b1010;
+    localparam [3:0] OP_MTSR = 4'b1011;
+
     wire is_rtype;
-    assign is_rtype = (opcode==4'b0000) || (opcode==4'b0001) ||
-                      (opcode==4'b0010) || (opcode==4'b1010) ||
-                      (opcode==4'b1011);
+    assign is_rtype = (opcode == OP_ALU0) || (opcode == OP_ALU1) ||
+                      (opcode == OP_ALU2) || (opcode == OP_MFSR) ||
+                      (opcode == OP_MTSR);
 
-    wire [2:0] rs_final = (is_rtype) ? rs_rtype : rs_i;
-    wire [2:0] rt_final = (is_rtype) ? rt_rtype : rt_i;
+    wire [2:0] rs_final = is_rtype ? rs_rtype : rs_i;
+    wire [2:0] rt_final = is_rtype ? rt_rtype : rt_i;
 
-    wire [2:0] rd = (reg_dst) ? rd_raw : rt_i;
+    wire [2:0] rd = reg_dst ? rd_raw : rt_i;
 
     wire [15:0] readA_out, readB_out;
     wire [15:0] wb_data;
@@ -116,11 +133,19 @@ module TOP(
         .data(wb_data),
         .readA_out(readA_out),
         .readB_out(readB_out),
-        .r0(r0), .r1(r1), .r2(r2), .r3(r3),
-        .r4(r4), .r5(r5), .r6(r6), .r7(r7)
+        .r0(r0),
+        .r1(r1),
+        .r2(r2),
+        .r3(r3),
+        .r4(r4),
+        .r5(r5),
+        .r6(r6),
+        .r7(r7)
     );
 
-    // ===================== Immediate Generator =====================
+    // =========================================================
+    // Immediate Generator (uses RAW instruction)
+    // =========================================================
     wire [15:0] imm_out;
 
     Imm_gen IMM0(
@@ -129,9 +154,11 @@ module TOP(
         .imm_out(imm_out)
     );
 
-    wire [15:0] alu_B = (alu_src) ? imm_out : readB_out;
+    wire [15:0] alu_B = alu_src ? imm_out : readB_out;
 
-    // ===================== ALU =====================
+    // =========================================================
+    // ALU + ALU Control
+    // =========================================================
     wire [5:0]  alu_sel;
     wire [15:0] ALU_out;
     wire [15:0] alu_hi_data, alu_lo_data;
@@ -153,7 +180,9 @@ module TOP(
         .cmp(cmp)
     );
 
-    // ===================== Data Memory =====================
+    // =========================================================
+    // Data Memory
+    // =========================================================
     wire [15:0] read_data;
 
     data_mem DM0(
@@ -166,7 +195,9 @@ module TOP(
         .read_data(read_data)
     );
 
-    // ===================== Special Registers =====================
+    // =========================================================
+    // Special Registers
+    // =========================================================
     wire [15:0] mfsr_data;
 
     special_register SR0(
@@ -195,13 +226,18 @@ module TOP(
         .mfsr_data(mfsr_data)
     );
 
-    // ===================== Writeback =====================
+    // =========================================================
+    // Writeback
+    // wb_sel: 00 ALU, 01 MEM, 10 SPECIAL
+    // =========================================================
     assign wb_data = (wb_sel == 2'b00) ? ALU_out   :
                      (wb_sel == 2'b01) ? read_data :
-                     (wb_sel == 2'b10) ? mfsr_data :
+                     (wb_sel == 2'b10) ? mfsr_data  :
                      ALU_out;
 
-    // ===================== Branch & Jump =====================
+    // =========================================================
+    // Branch & Jump (uses RAW instruction)
+    // =========================================================
     wire        branch_taken = branch_en & cmp;
     wire [15:0] pc_branch_target;
     wire [15:0] jump_target;
@@ -218,11 +254,12 @@ module TOP(
         .jump_target(jump_target)
     );
 
-    assign next_pc = (jr_en)        ? readA_out        :
-                     (jump_en)      ? jump_target      :
-                     (branch_taken) ? pc_branch_target :
-                                      pc_plus2;
+    // Priority: JR > JUMP > BRANCH > PC+2
+    assign next_pc = jr_en        ? readB_out        :
+                     jump_en      ? jump_target      :
+                     branch_taken ? pc_branch_target :
+                                  pc_plus2;
 
-    // interrupt_pending, mux_clk currently unused (OK)
+    // interrupt_pending and mux_clk currently unused
 
 endmodule
