@@ -1,0 +1,12 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// pc_add_2: PC + 2 (instruction is 16-bit => +2 bytes)
+//////////////////////////////////////////////////////////////////////////////////
+
+module pc_add_2(
+    input  wire [15:0] pc,
+    input  wire [15:0] imm,     // usually CONST2 = 2
+    output wire [15:0] pc_out
+);
+assign pc_out = pc + imm;
+endmodule
