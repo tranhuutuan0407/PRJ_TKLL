@@ -181,21 +181,43 @@ module C_U(
                 wb_sel    = WB_ALU;
             end
 
-            // ====== BNEQ ======
-            OP_BNEQ: begin
-                alu_main    = OP_BNEQ;
-                branch_en   = 1'b1;
-                branch_type = 1'b0;   // BNEQ
-                immtype     = IMM_BR;
-            end
+// ====== BNEQ ======
+OP_BNEQ: begin
+    alu_main    = OP_BNEQ;
 
-            // ====== BGTZ ======
-            OP_BGTZ: begin
-                alu_main    = OP_BGTZ;
-                branch_en   = 1'b1;
-                branch_type = 1'b1;   // BGTZ
-                immtype     = IMM_BR;
-            end
+    // branch control
+    branch_en   = 1'b1;
+    branch_type = 1'b0;   // BNEQ
+    immtype     = IMM_BR;
+
+    // datapath safety
+    alu_src     = 1'b0;   // so sánh rs v?i rt (không dùng imm)
+    reg_write   = 1'b0;
+    mem_read    = 1'b0;
+    mem_write   = 1'b0;
+    jump_en     = 1'b0;
+    jr_en       = 1'b0;
+end
+
+// ====== BGTZ ======
+OP_BGTZ: begin
+    alu_main    = OP_BGTZ;
+
+    // branch control
+    branch_en   = 1'b1;
+    branch_type = 1'b1;   // BGTZ
+    immtype     = IMM_BR;
+
+    // datapath safety
+    alu_src     = 1'b0;   // th??ng không c?n B, nh?ng ?? 0 cho ch?c
+    reg_write   = 1'b0;
+    mem_read    = 1'b0;
+    mem_write   = 1'b0;
+    jump_en     = 1'b0;
+    jr_en       = 1'b0;
+end
+
+
 
             // ====== JUMP ======
             OP_JUMP: begin

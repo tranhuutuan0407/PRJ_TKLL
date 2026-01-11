@@ -73,7 +73,8 @@ module Ins_Mem (
         // Load program
         // Vivado/XSim will look relative to simulation run dir, and your tb script exports program.hex there.
         $display("[Ins_Mem] readmemh start");
-        $readmemh("program.hex", rom);
+        $readmemh("test_alu1.hex", rom);
+//           $readmemh("program_addi.hex", rom);
 
         // Quick debug dump
         $display("[Ins_Mem] ROM[0]=%h ROM[1]=%h ROM[6]=%h ROM[7]=%h",
