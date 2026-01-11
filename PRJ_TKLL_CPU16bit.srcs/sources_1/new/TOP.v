@@ -238,7 +238,11 @@ module TOP(
     // =========================================================
     // Branch & Jump (uses RAW instruction)
     // =========================================================
-    wire        branch_taken = branch_en & cmp;
+ wire cmp_bneq = (readA_out != readB_out);
+wire cmp_bgtz = ($signed(readA_out) > 0);
+wire branch_taken = branch_en & (branch_type ? cmp_bgtz : cmp_bneq);
+
+
     wire [15:0] pc_branch_target;
     wire [15:0] jump_target;
 
@@ -255,7 +259,7 @@ module TOP(
     );
 
     // Priority: JR > JUMP > BRANCH > PC+2
-    assign next_pc = jr_en        ? readB_out        :
+    assign next_pc = jr_en        ? readA_out        :
                      jump_en      ? jump_target      :
                      branch_taken ? pc_branch_target :
                                   pc_plus2;
