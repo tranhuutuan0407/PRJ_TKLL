@@ -1,3 +1,11 @@
-3045
-1298
-700F
+304a // PC 0x00: addi $1, $0, 10  - Khoi tao $1 = 10
+7006 // PC 0x02: j 0x000C         - Nhay den PC 12 (addr = 12/2 = 6)
+31c7 // PC 0x04: addi $7, $0, 7   - Bi nhay qua (Skip)
+31c7 // PC 0x06: addi $7, $0, 7   - Bi nhay qua (Skip)
+31c7 // PC 0x08: addi $7, $0, 7   - Bi nhay qua (Skip)
+31c7 // PC 0x0A: addi $7, $0, 7   - Bi nhay qua (Skip)
+3094 // PC 0x0C: addi $2, $0, 20  - Cap nhat $2 = 20 (Diem den cua lenh J dau tien)
+700a // PC 0x0E: j 0x0014         - Nhay tiep den PC 20 (addr = 20/2 = 10 tuc la 0xA)
+30ca // PC 0x10: addi $3, $0, 30  - Bi nhay qua (Skip)
+30ca // PC 0x12: addi $3, $0, 30  - Bi nhay qua (Skip)
+f000 // PC 0x14: hlt             - Dung chuong trinh

@@ -1,14 +1,11 @@
-304A // PC 0x00: ADDI $1, $0, 10  | R1 = 10 (Nap so A)
-3083 // PC 0x02: ADDI $2, $0, 3   | R2 = 3  (Nap so B)
-
-// --- NHOM ALU0 ---
-0298 // PC 0x04: ADDU $3, $1, $2  | R3 = 10 + 3 = 13 (0x000D)
-02A1 // PC 0x06: SUBU $4, $1, $2  | R4 = 10 - 3 = 7  (0x0007)
-0282 // PC 0x08: MULTU $1, $2     | HI:LO = 10 * 3 = 30 (Check reg HI/LO)
-0283 // PC 0x0A: DIVU $1, $2      | LO = 3, HI = 1      (Check reg HI/LO)
-02AC // PC 0x0C: AND  $5, $1, $2  | R5 = 10 AND 3 = 2  (0x0002)
-02B5 // PC 0x0E: OR   $6, $1, $2  | R6 = 10 OR 3  = 11 (0x000B)
-02BE // PC 0x10: NOR  $7, $1, $2  | R7 = 10 NOR 3 = -12 (0xFFF4)
-028F // PC 0x12: XOR  $1, $1, $2  | R1 = 10 XOR 3 = 9  (0x0009 - Ghi de R1)
-
-F000 // PC 0x14: HLT              | Dung chuong trinh
+304a // PC 0x00: addi $1, $0, 10  - Khoi tao $1 = 10
+7006 // PC 0x02: j 0x000C         - Nhay den PC 12 (addr = 12/2 = 6)
+31c7 // PC 0x04: addi $7, $0, 7   - Bi nhay qua (Skip)
+31c7 // PC 0x06: addi $7, $0, 7   - Bi nhay qua (Skip)
+31c7 // PC 0x08: addi $7, $0, 7   - Bi nhay qua (Skip)
+31c7 // PC 0x0A: addi $7, $0, 7   - Bi nhay qua (Skip)
+3094 // PC 0x0C: addi $2, $0, 20  - Cap nhat $2 = 20 (Diem den cua lenh J dau tien)
+700a // PC 0x0E: j 0x0014         - Nhay tiep den PC 20 (addr = 20/2 = 10 tuc la 0xA)
+30ca // PC 0x10: addi $3, $0, 30  - Bi nhay qua (Skip)
+30ca // PC 0x12: addi $3, $0, 30  - Bi nhay qua (Skip)
+f000 // PC 0x14: hlt             - Dung chuong trinh
