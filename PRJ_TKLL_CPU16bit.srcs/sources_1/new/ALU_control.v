@@ -129,8 +129,8 @@ module ALU_control(
             // =========================
             OP_SHIFT: begin
                 case (funct3)
-                    3'b000: ALU_control = SEL_SHL;
-                    3'b001: ALU_control = SEL_SHR;
+                    3'b000: ALU_control = SEL_SHR;
+                    3'b001: ALU_control = SEL_SHL;
                     3'b010: ALU_control = SEL_ROR;
                     3'b011: ALU_control = SEL_ROL;
                     default: ALU_control = SEL_SHL;

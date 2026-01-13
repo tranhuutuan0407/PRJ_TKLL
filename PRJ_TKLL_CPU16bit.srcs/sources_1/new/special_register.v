@@ -71,11 +71,10 @@ module special_register(
             if (ra_signal) RA <= ra_data;
             if (at_signal) AT <= at_data;
             if (hi_signal) HI <= hi_data;
+            else if (hi_from_alu_signal) HI <= hi_from_alu_data;
+            
             if (lo_signal) LO <= lo_data;
-
-            // mult/div writes from ALU
-            if (hi_from_alu_signal) HI <= hi_from_alu_data;
-            if (lo_from_alu_signal) LO <= lo_from_alu_data;
+            else if (lo_from_alu_signal) LO <= lo_from_alu_data;
         end
     end
 

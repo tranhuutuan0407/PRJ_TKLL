@@ -1,0 +1,702 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Jan 12 23:36:05 2026
+# Process ID: 39696
+# Current directory: D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.runs/synth_1
+# Command line: vivado.exe -log TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
+# Log file: D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.runs/synth_1/TOP.vds
+# Journal file: D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source TOP.tcl -notrace
+Command: synth_design -top TOP -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 39588 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 356.918 ; gain = 99.223
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'TOP' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/TOP.v:3]
+	Parameter CONST2 bound to: 16'b0000000000000010 
+	Parameter OP_ALU0 bound to: 4'b0000 
+	Parameter OP_ALU1 bound to: 4'b0001 
+	Parameter OP_ALU2 bound to: 4'b0010 
+	Parameter OP_MFSR bound to: 4'b1010 
+	Parameter OP_MTSR bound to: 4'b1011 
+INFO: [Synth 8-6157] synthesizing module 'program_counter' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/program_counter.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'program_counter' (1#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/program_counter.v:9]
+INFO: [Synth 8-6157] synthesizing module 'pc_add_2' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/pc_add_2.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'pc_add_2' (2#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/pc_add_2.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Ins_Mem' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Ins_Mem.v:3]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'program.hex'; please make sure the file is added to project and has read permission, ignoring [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Ins_Mem.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'Ins_Mem' (3#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Ins_Mem.v:3]
+INFO: [Synth 8-6157] synthesizing module 'C_U' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/C_U.v:14]
+	Parameter OP_ALU0 bound to: 4'b0000 
+	Parameter OP_ALU1 bound to: 4'b0001 
+	Parameter OP_SHIFT bound to: 4'b0010 
+	Parameter OP_ADDI bound to: 4'b0011 
+	Parameter OP_SLTI bound to: 4'b0100 
+	Parameter OP_BNEQ bound to: 4'b0101 
+	Parameter OP_BGTZ bound to: 4'b0110 
+	Parameter OP_JUMP bound to: 4'b0111 
+	Parameter OP_LH bound to: 4'b1000 
+	Parameter OP_SH bound to: 4'b1001 
+	Parameter OP_MFSR bound to: 4'b1010 
+	Parameter OP_MTSR bound to: 4'b1011 
+	Parameter OP_HLT bound to: 4'b1111 
+	Parameter WB_ALU bound to: 2'b00 
+	Parameter WB_MEM bound to: 2'b01 
+	Parameter WB_SPECIAL bound to: 2'b10 
+	Parameter IMM_NONE bound to: 3'b000 
+	Parameter IMM_SEXT6 bound to: 3'b001 
+	Parameter IMM_BR bound to: 3'b010 
+INFO: [Synth 8-6155] done synthesizing module 'C_U' (4#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/C_U.v:14]
+INFO: [Synth 8-6157] synthesizing module 'reg_file' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/reg_file.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'reg_file' (5#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/reg_file.v:20]
+INFO: [Synth 8-6157] synthesizing module 'Imm_gen' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Imm_gen.v:12]
+	Parameter IMM_NONE bound to: 3'b000 
+	Parameter IMM_SEXT6 bound to: 3'b001 
+	Parameter IMM_BR bound to: 3'b010 
+INFO: [Synth 8-6155] done synthesizing module 'Imm_gen' (6#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Imm_gen.v:12]
+INFO: [Synth 8-6157] synthesizing module 'ALU_control' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/ALU_control.v:26]
+	Parameter OP_ALU0 bound to: 4'b0000 
+	Parameter OP_ALU1 bound to: 4'b0001 
+	Parameter OP_SHIFT bound to: 4'b0010 
+	Parameter OP_ADDI bound to: 4'b0011 
+	Parameter OP_SLTI bound to: 4'b0100 
+	Parameter OP_BNEQ bound to: 4'b0101 
+	Parameter OP_BGTZ bound to: 4'b0110 
+	Parameter OP_LH bound to: 4'b1000 
+	Parameter OP_SH bound to: 4'b1001 
+	Parameter SEL_ADD bound to: 6'b000000 
+	Parameter SEL_SUB bound to: 6'b000001 
+	Parameter SEL_AND bound to: 6'b000010 
+	Parameter SEL_OR bound to: 6'b000011 
+	Parameter SEL_NOR bound to: 6'b000100 
+	Parameter SEL_XOR bound to: 6'b000101 
+	Parameter SEL_MULT bound to: 6'b001010 
+	Parameter SEL_DIV bound to: 6'b001011 
+	Parameter SEL_MULTU bound to: 6'b001100 
+	Parameter SEL_DIVU bound to: 6'b001101 
+	Parameter SEL_SLT bound to: 6'b010100 
+	Parameter SEL_SLTU bound to: 6'b010101 
+	Parameter SEL_SEQ bound to: 6'b010110 
+	Parameter SEL_SHL bound to: 6'b011110 
+	Parameter SEL_SHR bound to: 6'b011111 
+	Parameter SEL_ROR bound to: 6'b100000 
+	Parameter SEL_ROL bound to: 6'b100001 
+	Parameter SEL_ADDR_LHSH bound to: 6'b101000 
+	Parameter SEL_CMP_NEQ bound to: 6'b101001 
+	Parameter SEL_CMP_GTZ bound to: 6'b101010 
+	Parameter SEL_JR_NOP bound to: 6'b111111 
+INFO: [Synth 8-226] default block is never used [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/ALU_control.v:92]
+INFO: [Synth 8-226] default block is never used [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/ALU_control.v:112]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_control' (7#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/ALU_control.v:26]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/ALU.v:19]
+	Parameter SEL_ADD bound to: 6'b000000 
+	Parameter SEL_SUB bound to: 6'b000001 
+	Parameter SEL_AND bound to: 6'b000010 
+	Parameter SEL_OR bound to: 6'b000011 
+	Parameter SEL_NOR bound to: 6'b000100 
+	Parameter SEL_XOR bound to: 6'b000101 
+	Parameter SEL_MULT bound to: 6'b001010 
+	Parameter SEL_DIV bound to: 6'b001011 
+	Parameter SEL_MULTU bound to: 6'b001100 
+	Parameter SEL_DIVU bound to: 6'b001101 
+	Parameter SEL_SLT bound to: 6'b010100 
+	Parameter SEL_SLTU bound to: 6'b010101 
+	Parameter SEL_SEQ bound to: 6'b010110 
+	Parameter SEL_SHL bound to: 6'b011110 
+	Parameter SEL_SHR bound to: 6'b011111 
+	Parameter SEL_ROR bound to: 6'b100000 
+	Parameter SEL_ROL bound to: 6'b100001 
+	Parameter SEL_ADDR_LHSH bound to: 6'b101000 
+	Parameter SEL_CMP_NEQ bound to: 6'b101001 
+	Parameter SEL_CMP_GTZ bound to: 6'b101010 
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (8#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/ALU.v:19]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/data_mem.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (9#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/data_mem.v:21]
+INFO: [Synth 8-6157] synthesizing module 'special_register' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/special_register.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'special_register' (10#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/special_register.v:22]
+INFO: [Synth 8-6157] synthesizing module 'add_pc' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/add_pc.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'add_pc' (11#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/add_pc.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Jump' [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Jump.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Jump' (12#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Jump.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'TOP' (13#1) [D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/TOP.v:3]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[12]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[11]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[10]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[9]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[8]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[7]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[6]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[5]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[4]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[3]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[2]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[1]
+WARNING: [Synth 8-3331] design Jump has unconnected port pc[0]
+WARNING: [Synth 8-3331] design Jump has unconnected port instruction[15]
+WARNING: [Synth 8-3331] design Jump has unconnected port instruction[14]
+WARNING: [Synth 8-3331] design Jump has unconnected port instruction[13]
+WARNING: [Synth 8-3331] design Jump has unconnected port instruction[12]
+WARNING: [Synth 8-3331] design data_mem has unconnected port addr[0]
+WARNING: [Synth 8-3331] design Imm_gen has unconnected port instruction[15]
+WARNING: [Synth 8-3331] design Imm_gen has unconnected port instruction[14]
+WARNING: [Synth 8-3331] design Imm_gen has unconnected port instruction[13]
+WARNING: [Synth 8-3331] design Imm_gen has unconnected port instruction[12]
+WARNING: [Synth 8-3331] design Imm_gen has unconnected port instruction[11]
+WARNING: [Synth 8-3331] design Imm_gen has unconnected port instruction[10]
+WARNING: [Synth 8-3331] design Imm_gen has unconnected port instruction[9]
+WARNING: [Synth 8-3331] design Imm_gen has unconnected port instruction[8]
+WARNING: [Synth 8-3331] design Imm_gen has unconnected port instruction[7]
+WARNING: [Synth 8-3331] design Imm_gen has unconnected port instruction[6]
+WARNING: [Synth 8-3331] design Ins_Mem has unconnected port address[0]
+WARNING: [Synth 8-3331] design TOP has unconnected port interrupt_pending
+WARNING: [Synth 8-3331] design TOP has unconnected port mux_clk[1]
+WARNING: [Synth 8-3331] design TOP has unconnected port mux_clk[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:42:08 ; elapsed = 00:43:48 . Memory (MB): peak = 2661.648 ; gain = 2403.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:42:51 ; elapsed = 00:44:34 . Memory (MB): peak = 2661.648 ; gain = 2403.953
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:42:51 ; elapsed = 00:44:34 . Memory (MB): peak = 2661.648 ; gain = 2403.953
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-5544] ROM "reg_dst" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "jr_en" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regs_reg[1]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regs_reg[2]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regs_reg[3]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regs_reg[4]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regs_reg[5]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regs_reg[6]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "regs_reg[7]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "mem_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[32]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[33]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[34]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[35]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[36]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[37]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[38]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[39]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[40]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[41]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[42]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[43]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[44]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[45]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[46]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[47]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[48]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[49]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[50]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[51]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[52]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[53]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[54]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[55]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[56]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[57]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[58]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[59]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[60]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[61]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[62]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[63]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[64]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[65]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[66]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[67]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[68]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[69]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[70]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[71]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[72]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[73]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[74]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[75]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[76]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[77]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[78]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[79]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[80]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[81]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[82]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[83]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[84]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[85]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[86]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[87]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[88]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[89]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[90]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[91]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[92]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[93]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[94]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[95]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[96]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[97]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[98]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mem_reg[99]" won't be mapped to RAM because it is too sparse
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 01:59:39 ; elapsed = 02:05:23 . Memory (MB): peak = 3786.195 ; gain = 3528.500
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |data_mem__GB0 |           1|   1701610|
+|2     |TOP__GC0      |           1|     22014|
++------+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 4     
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 32781 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 12    
+	   9 Input     16 Bit        Muxes := 2     
+	   3 Input     16 Bit        Muxes := 1     
+	  21 Input     16 Bit        Muxes := 2     
+	   4 Input     16 Bit        Muxes := 1     
+	   8 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   9 Input      6 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	  14 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	  14 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 32780 
+	  14 Input      1 Bit        Muxes := 9     
+	  15 Input      1 Bit        Muxes := 2     
+	  18 Input      1 Bit        Muxes := 4     
+	  21 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module TOP 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+Module data_mem 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 32768 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 32768 
+Module program_counter 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module pc_add_2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+Module C_U 
+Detailed RTL Component Info : 
++---Muxes : 
+	  14 Input      3 Bit        Muxes := 1     
+	  14 Input      2 Bit        Muxes := 2     
+	  14 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 2     
+	  15 Input      1 Bit        Muxes := 2     
+	  18 Input      1 Bit        Muxes := 4     
+Module reg_file 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   9 Input     16 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 7     
+Module Imm_gen 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 1     
+Module ALU_control 
+Detailed RTL Component Info : 
++---Muxes : 
+	   8 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   9 Input      6 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 2     
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	  21 Input     16 Bit        Muxes := 2     
+	  21 Input      1 Bit        Muxes := 1     
+Module special_register 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module add_pc 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP mult_s, operation Mode is: A*B.
+DSP Report: operator mult_s is absorbed into DSP mult_s.
+DSP Report: Generating DSP mult_u, operation Mode is: A*B.
+DSP Report: operator mult_u is absorbed into DSP mult_u.
+WARNING: [Synth 8-3331] design TOP has unconnected port interrupt_pending
+WARNING: [Synth 8-3331] design TOP has unconnected port mux_clk[1]
+WARNING: [Synth 8-3331] design TOP has unconnected port mux_clk[0]
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[0]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[0]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[0]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[0]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[1]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[1]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[1]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[1]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[2]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[2]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[2]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[2]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[3]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[3]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[3]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[3]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[4]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[4]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[4]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[4]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[5]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[5]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[5]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[5]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[6]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[6]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[6]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[6]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[7]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[7]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[7]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[7]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[8]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[8]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[8]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[8]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[9]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[9]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[9]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[9]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[10]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[10]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[10]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[10]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[11]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[11]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[11]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[11]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[12]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[12]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[12]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[12]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[13]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[13]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[13]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[13]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[14]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[14]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[14]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/HI_reg[14]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/AT_reg[15]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/RA_reg[15]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/SR0/LO_reg[15]' (FDCE) to 'i_0/SR0/HI_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SR0/HI_reg[15] )
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[7][0]' (FDE) to 'i_0/RF0/regs_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[3][0]' (FDE) to 'i_0/RF0/regs_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[5][0]' (FDE) to 'i_0/RF0/regs_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[1][0]' (FDE) to 'i_0/RF0/regs_reg[2][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[6][0]' (FDE) to 'i_0/RF0/regs_reg[2][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[2][0]' (FDE) to 'i_0/RF0/regs_reg[4][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\RF0/regs_reg[4][0] )
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[7][1]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[3][1]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[5][1]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[1][1]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[6][1]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[2][1]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[4][1]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[7][2]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[3][2]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[5][2]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[1][2]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[6][2]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[2][2]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[4][2]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[7][3]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[3][3]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[5][3]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[1][3]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[6][3]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[2][3]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[4][3]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[7][4]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[3][4]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[5][4]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[1][4]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[6][4]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[2][4]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[4][4]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[7][5]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[3][5]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'i_0/RF0/regs_reg[5][5]' (FDE) to 'i_0/RF0/regs_reg[6][15]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\RF0/regs_reg[4][15] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 05:53:08 ; elapsed = 12:47:51 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|Ins_Mem     | p_0_out    | 32768x16      | LUT            | 
+|Ins_Mem     | p_0_out    | 32768x16      | LUT            | 
++------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ALU         | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU         | A*B         | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 05:53:08 ; elapsed = 12:47:52 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 05:53:08 ; elapsed = 12:47:52 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 05:53:10 ; elapsed = 12:47:58 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 05:53:10 ; elapsed = 12:47:58 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 05:53:10 ; elapsed = 12:47:58 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 05:53:10 ; elapsed = 12:47:58 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 05:53:10 ; elapsed = 12:47:58 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 05:53:10 ; elapsed = 12:47:58 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |   128|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   128|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 05:53:10 ; elapsed = 12:47:58 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 1 critical warnings and 35 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 05:53:10 ; elapsed = 12:48:08 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+Synthesis Optimization Complete : Time (s): cpu = 05:53:10 ; elapsed = 12:48:08 . Memory (MB): peak = 4036.766 ; gain = 3779.070
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+250 Infos, 35 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 05:54:02 ; elapsed = 12:49:32 . Memory (MB): peak = 4036.766 ; gain = 3792.105
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.runs/synth_1/TOP.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 4036.766 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 13 12:25:41 2026...

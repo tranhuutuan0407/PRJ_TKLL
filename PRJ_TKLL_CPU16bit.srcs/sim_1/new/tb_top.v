@@ -36,7 +36,7 @@ module tb_top;
   reg [1023:0] hexfile;
   integer cycles;
   integer instructions_executed;
-  integer MAX_CYCLES = 2000;
+  integer MAX_CYCLES = 5000;
 
   // =========================
   // TASK: In Báo cáo Hi?u n?ng

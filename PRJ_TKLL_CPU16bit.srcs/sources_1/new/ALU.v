@@ -127,7 +127,7 @@ module ALU(
                 cmp = (A != B);
             end
             SEL_CMP_GTZ: begin
-                cmp = (As > 0);
+                cmp = ($signed(A) > 0);
             end
             // ================= LH/SH address per spec =================
             // start = (rs[15:1] + imm) << 1
