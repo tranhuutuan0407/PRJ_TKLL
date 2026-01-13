@@ -1,14 +1,3 @@
-304A // PC 0x00: ADDI $1, $0, 10  | R1 = 10 (Nap so A)
-3083 // PC 0x02: ADDI $2, $0, 3   | R2 = 3  (Nap so B)
-
-// --- NHOM ALU0 ---
-0298 // PC 0x04: ADDU $3, $1, $2  | R3 = 10 + 3 = 13 (0x000D)
-02A1 // PC 0x06: SUBU $4, $1, $2  | R4 = 10 - 3 = 7  (0x0007)
-0282 // PC 0x08: MULTU $1, $2     | HI:LO = 10 * 3 = 30 (Check reg HI/LO)
-0283 // PC 0x0A: DIVU $1, $2      | LO = 3, HI = 1      (Check reg HI/LO)
-02AC // PC 0x0C: AND  $5, $1, $2  | R5 = 10 AND 3 = 2  (0x0002)
-02B5 // PC 0x0E: OR   $6, $1, $2  | R6 = 10 OR 3  = 11 (0x000B)
-02BE // PC 0x10: NOR  $7, $1, $2  | R7 = 10 NOR 3 = -12 (0xFFF4)
-028F // PC 0x12: XOR  $1, $1, $2  | R1 = 10 XOR 3 = 9  (0x0009 - Ghi de R1)
-
-F000 // PC 0x14: HLT              | Dung chuong trinh
+3045
+1298
+700F

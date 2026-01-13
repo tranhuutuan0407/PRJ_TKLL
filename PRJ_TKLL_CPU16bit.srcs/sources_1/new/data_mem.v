@@ -35,7 +35,10 @@ module data_mem(
 
     // word index = addr >> 1
     wire [14:0] waddr = addr[15:1];
-
+    initial begin
+//        $readmemh("program.hex", mem); // Ho?c dùng vòng l?p for ? ?ây n?u mu?n xóa tr?ng
+         for (i = 0; i < 32768; i = i + 1) mem[i] = 16'h0000;
+    end
     // Read is combinational when enabled
     always @(*) begin
         if (mem_read_en)
@@ -45,16 +48,9 @@ module data_mem(
     end
 
     // Write on posedge clk when enabled
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
-            // optional init to zero
-            for (i = 0; i < 32768; i = i + 1)
-                mem[i] <= 16'h0000;
-        end
-        else begin
-            if (mem_write_en) begin
-                mem[waddr] <= write_data;
-            end
+    always @(posedge clk) begin
+        if (mem_write_en) begin
+            mem[waddr] <= write_data;
         end
     end
 
