@@ -16,7 +16,7 @@ D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Branch_Jump_Logic.v,17
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/C_U.v,1768131190,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Datapath_Mux.v,,C_U,,,,,,,,
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Datapath_Mux.v,1768330965,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Imm_gen.v,,Datapath_Mux,,,,,,,,
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Imm_gen.v,1768066466,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Ins_Mem.v,,Imm_gen,,,,,,,,
-D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Ins_Mem.v,1768332506,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Instruction_Decoder.v,,Ins_Mem,,,,,,,,
+D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Ins_Mem.v,1768386329,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Instruction_Decoder.v,,Ins_Mem,,,,,,,,
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Instruction_Decoder.v,1768330965,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/data_mem.v,,Instruction_Decoder,,,,,,,,
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Jump.v,1768066466,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/add_pc.v,,Jump,,,,,,,,
 D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/TOP.v,1768330961,verilog,,D:/PRJ_TKLL_CPU16bit/PRJ_TKLL_CPU16bit.srcs/sources_1/new/Jump.v,,TOP,,,,,,,,

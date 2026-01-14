@@ -1,11 +1,20 @@
-304a // PC 0x00: addi $1, $0, 10  - Khoi tao $1 = 10
-7006 // PC 0x02: j 0x000C         - Nhay den PC 12 (addr = 12/2 = 6)
-31c7 // PC 0x04: addi $7, $0, 7   - Bi nhay qua (Skip)
-31c7 // PC 0x06: addi $7, $0, 7   - Bi nhay qua (Skip)
-31c7 // PC 0x08: addi $7, $0, 7   - Bi nhay qua (Skip)
-31c7 // PC 0x0A: addi $7, $0, 7   - Bi nhay qua (Skip)
-3094 // PC 0x0C: addi $2, $0, 20  - Cap nhat $2 = 20 (Diem den cua lenh J dau tien)
-700a // PC 0x0E: j 0x0014         - Nhay tiep den PC 20 (addr = 20/2 = 10 tuc la 0xA)
-30ca // PC 0x10: addi $3, $0, 30  - Bi nhay qua (Skip)
-30ca // PC 0x12: addi $3, $0, 30  - Bi nhay qua (Skip)
-f000 // PC 0x14: hlt             - Dung chuong trinh
+304a // PC 0x00: addi $1, $0, 10   - R1 = 10
+3083 // PC 0x02: addi $2, $0, 3    - R2 = 3
+0298 // PC 0x04: addu $3, $1, $2   - addu: R3 = 13 (0x000d)
+0299 // PC 0x06: subu $3, $1, $2   - subu: R3 = 7 (FIX: Hex cu 02d9 bi nguoc thanh 3-10)
+029c // PC 0x08: and $3, $1, $2    - and
+029d // PC 0x0A: or $3, $1, $2     - or
+029e // PC 0x0C: nor $3, $1, $2    - nor
+029f // PC 0x0E: xor $3, $1, $2    - xor
+2291 // PC 0x10: shl $3, $1, $2    - ALU2 shl: R3 = 10 << 3 = 80 (0x0050)
+9182 // PC 0x12: sh $3, 2($1)      - MEM: Ghi 80 vao dia chi (5+2)<<1 = 14 (0x000e)
+8202 // PC 0x14: lh $4, 2($1)      - MEM: Doc lai tu dia chi 14 vao R4 (R4 = 80)
+5202 // PC 0x16: bneq $1, $0, 2    - BRANCH: 10 != 0 (Dung) -> Nhay den PC 0x1C
+f000 // PC 0x18: hlt              - Skip
+f000 // PC 0x1A: hlt              - Skip
+7010 // PC 0x1C: j 0x0020          - JUMP: Nhay tuyet doi den PC 32 (0x20)
+f000 // PC 0x1E: hlt              - Skip
+3141 // PC 0x20: addi $5, $0, 1    - Diem den cua JUMP
+b042 // PC 0x22: mtra $1           - MTSR: RA = 10 (FIX: Hex cu b081 la mtat)
+a032 // PC 0x24: mfra $6           - MFSR: R6 = 10 (FIX: Hex cu a32a la ghi vao R5)
+f000 // PC 0x26: hlt              - KET THUC THUC SU
